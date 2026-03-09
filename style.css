@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1a0a2e;
+    color: #f1f5f9;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #2d1b4e, #0d0017);
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+.title {
+    font-size: 18px;
+    margin: 10px 0 20px;
+    color: #a855f7;
+}
+
+.header-buttons {
+    margin-top: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #a855f7;
+    color: #0d0017;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn.secondary {
+    background-color: transparent;
+    border: 2px solid #a855f7;
+    color: #a855f7;
+}
+
+section {
+    padding: 50px 10%;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #a855f7;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: #2d1b4e;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.project-card {
+    background-color: #2d1b4e;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.project-card a {
+    color: #a855f7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul {
+    list-style: square;
+    margin-left: 20px;
+}
+
+/* --- Added Hover Effects for Interactivity --- */
+.btn:hover {
+    background-color: #9333ea;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(168, 85, 247, 0.3);
+}
+
+.btn.secondary:hover {
+    background-color: rgba(168, 85, 247, 0.1);
+}
+
+.skill-card {
+    background-color: #2d1b4e;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.2);
+}
+
+.section-subtitle {
+    margin: 40px 0 20px;
+    color: #f1f5f9;
+    font-size: 24px;
+    border-bottom: 2px solid #a855f7;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.project-card {
+    background-color: #2d1b4e;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.2);
+}
+
+/* --- Added Responsive Design Tweaks --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    .btn {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+}
+
+.cert-card {
+    text-align: center;
+    border: 1px solid #a855f7;
+    background-color: #2d1b4e;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
+
+.cert-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+}
+
+/* --- Carousel Styling --- */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 80%;
+    /* Show roughly one card at a time with some padding */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.carousel-btn {
+    background: transparent;
+    border: none;
+    color: #a855f7;
+    font-size: 32px;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    color: #9333ea;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2d1b4e;
+    margin-top: 40px;
+}
