@@ -4,17 +4,47 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-main: #000000;
+    --bg-card: #120a1c;
+    --bg-header: linear-gradient(135deg, #180924, #000000);
+    --text-main: #eae1f0;
+    --accent: #b68ecf;
+    --accent-hover: #cfaeeb;
+    --accent-transparent: rgba(182, 142, 207, 0.2);
+    --accent-transparent-hover: rgba(182, 142, 207, 0.1);
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #1a0a2e;
-    color: #f1f5f9;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    position: relative;
+    z-index: 0;
+}
+
+/* Background flower overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('flower.jpeg');
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 50%; /* Adjusts the flower to be nicely sized on the right */
+    opacity: 0.15; /* Subtle glow effect without clashing with text */
+    z-index: -1;
+    pointer-events: none;
 }
 
 header {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(135deg, #2d1b4e, #0d0017);
+    background: var(--bg-header);
 }
 
 header h1 {
@@ -24,7 +54,7 @@ header h1 {
 .title {
     font-size: 18px;
     margin: 10px 0 20px;
-    color: #a855f7;
+    color: var(--accent);
 }
 
 .header-buttons {
@@ -35,8 +65,8 @@ header h1 {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
-    background-color: #a855f7;
-    color: #0d0017;
+    background-color: var(--accent);
+    color: var(--bg-main);
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -44,8 +74,8 @@ header h1 {
 
 .btn.secondary {
     background-color: transparent;
-    border: 2px solid #a855f7;
-    color: #a855f7;
+    border: 2px solid var(--accent);
+    color: var(--accent);
 }
 
 section {
@@ -54,7 +84,7 @@ section {
 
 h2 {
     margin-bottom: 20px;
-    color: #a855f7;
+    color: var(--accent);
 }
 
 .skills-container {
@@ -64,22 +94,26 @@ h2 {
 }
 
 .skill-card {
-    background-color: #2d1b4e;
+    background-color: var(--bg-card);
     padding: 20px;
     border-radius: 8px;
 }
 
 .project-card {
-    background-color: #2d1b4e;
+    background-color: var(--bg-card);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
 }
 
 .project-card a {
-    color: #a855f7;
+    color: var(--accent);
     text-decoration: none;
     font-weight: bold;
+}
+
+.project-card a i {
+    margin-right: 5px;
 }
 
 ul {
@@ -89,48 +123,41 @@ ul {
 
 /* --- Added Hover Effects for Interactivity --- */
 .btn:hover {
-    background-color: #9333ea;
+    background-color: var(--accent-hover);
     transform: translateY(-2px);
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(168, 85, 247, 0.3);
+    box-shadow: 0 4px 10px var(--accent-transparent);
 }
 
 .btn.secondary:hover {
-    background-color: rgba(168, 85, 247, 0.1);
+    background-color: var(--accent-transparent-hover);
 }
 
 .skill-card {
-    background-color: #2d1b4e;
-    padding: 20px;
-    border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.2);
+    box-shadow: 0 5px 15px var(--accent-transparent);
 }
 
 .section-subtitle {
     margin: 40px 0 20px;
-    color: #f1f5f9;
+    color: var(--text-main);
     font-size: 24px;
-    border-bottom: 2px solid #a855f7;
+    border-bottom: 2px solid var(--accent);
     display: inline-block;
     padding-bottom: 5px;
 }
 
 .project-card {
-    background-color: #2d1b4e;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.2);
+    box-shadow: 0 5px 15px var(--accent-transparent);
 }
 
 /* --- Added Responsive Design Tweaks --- */
@@ -156,8 +183,8 @@ ul {
 
 .cert-card {
     text-align: center;
-    border: 1px solid #a855f7;
-    background-color: #2d1b4e;
+    border: 1px solid var(--accent);
+    background-color: var(--bg-card);
     border-radius: 8px;
     overflow: hidden;
     display: flex;
@@ -189,7 +216,6 @@ ul {
 .carousel-wrapper {
     overflow: hidden;
     width: 80%;
-    /* Show roughly one card at a time with some padding */
 }
 
 .carousel-track {
@@ -206,7 +232,7 @@ ul {
 .carousel-btn {
     background: transparent;
     border: none;
-    color: #a855f7;
+    color: var(--accent);
     font-size: 32px;
     cursor: pointer;
     padding: 10px;
@@ -215,12 +241,21 @@ ul {
 }
 
 .carousel-btn:hover {
-    color: #9333ea;
+    color: var(--accent-hover);
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #2d1b4e;
+    background-color: var(--bg-card);
     margin-top: 40px;
+}
+
+/* Fix for contact section links */
+#contact p i, #contact p a {
+    color: var(--accent);
+    text-decoration: none;
+}
+#contact p a:hover {
+    color: var(--accent-hover);
 }
