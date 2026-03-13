@@ -5,19 +5,19 @@
 }
 
 :root {
-    --bg-main: #fffdf5;          /* Soft, very light, warm yellow tint */
-    --bg-card: #ffffff;          /* Pure white for clean, readable cards */
-    --bg-header: linear-gradient(135deg, #ff9a9e, #fecfef); /* Warm pink to peach gradient */
-    --text-main: #4a4a4a;        /* Soft dark gray for readability, warmer than black */
-    --accent: #ff7f50;           /* Vibrant coral/orange accent */
-    --accent-hover: #ff6347;     /* Deeper, warmer tomato orange/red for hover */
-    --accent-transparent: rgba(255, 127, 80, 0.2);
-    --accent-transparent-hover: rgba(255, 127, 80, 0.1);
+    --bg-main: #fdfaf6;          /* Soft, very light cream */
+    --bg-card: #f5ebe0;          /* Warm beige for cards */
+    --bg-header: linear-gradient(135deg, #d5bdaf, #f5ebe0); /* Muted taupe to beige gradient */
+    --text-main: #4b3832;        /* Deep espresso brown for text */
+    --accent: #967259;           /* Rich leather brown accent */
+    --accent-hover: #634832;     /* Deep dark brown for hover */
+    --accent-transparent: rgba(150, 114, 89, 0.15);
+    --accent-transparent-hover: rgba(150, 114, 89, 0.25);
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
     background-color: var(--bg-main);
     color: var(--text-main);
     position: relative;
@@ -31,17 +31,21 @@ header {
 }
 
 header h1 {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    font-size: 36px;
-    color: #ffffff;
+    font-family: 'Lora', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
 }
 
 .title {
     font-size: 18px;
-    margin: 10px 0 20px;
-    color: #ffffff; /* Make the subtitle white too for visibility */
-    opacity: 0.9;
+    margin: 10px 0 25px;
+    color: var(--text-main);
+    opacity: 0.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header-buttons {
@@ -50,13 +54,16 @@ header h1 {
 
 .btn {
     display: inline-block;
-    padding: 10px 20px;
-    margin: 5px;
+    padding: 12px 28px;
+    margin: 8px;
     background-color: var(--accent);
-    color: #ffffff; /* White text on pink buttons */
+    color: #ffffff;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+    border-radius: 50px; /* Rounded buttons for a softer feel */
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    border: 2px solid var(--accent);
 }
 
 .btn.secondary {
@@ -70,8 +77,24 @@ section {
 }
 
 h2 {
-    margin-bottom: 20px;
-    color: var(--accent);
+    font-family: 'Lora', serif;
+    margin-bottom: 30px;
+    color: var(--text-main);
+    font-size: 32px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent);
 }
 
 .skills-container {
@@ -82,15 +105,17 @@ h2 {
 
 .skill-card {
     background-color: var(--bg-card);
-    padding: 20px;
-    border-radius: 8px;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(150, 114, 89, 0.1);
 }
 
 .project-card {
     background-color: var(--bg-card);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(150, 114, 89, 0.1);
 }
 
 .project-card a {
@@ -130,12 +155,13 @@ ul {
 }
 
 .section-subtitle {
-    margin: 40px 0 20px;
+    font-family: 'Lora', serif;
+    margin: 50px 0 30px;
     color: var(--text-main);
-    font-size: 24px;
+    font-size: 26px;
     border-bottom: 2px solid var(--accent);
     display: inline-block;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
 }
 
 .project-card {
@@ -170,14 +196,15 @@ ul {
 
 .cert-card {
     text-align: center;
-    border: 1px solid var(--accent);
+    border: 1px solid rgba(150, 114, 89, 0.2);
     background-color: var(--bg-card);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 400px;
+    height: 450px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .cert-card img {
@@ -217,13 +244,17 @@ ul {
 }
 
 .carousel-btn {
-    background: transparent;
-    border: none;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(150, 114, 89, 0.2);
     color: var(--accent);
-    font-size: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    padding: 10px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     z-index: 10;
 }
 
@@ -233,9 +264,11 @@ ul {
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
     background-color: var(--bg-card);
-    margin-top: 40px;
+    margin-top: 60px;
+    color: var(--text-main);
+    border-top: 1px solid rgba(150, 114, 89, 0.1);
 }
 
 /* Fix for contact section links */
