@@ -5,85 +5,256 @@
 }
 
 :root {
-    --bg-main: #fdfaf6;          /* Soft, very light cream */
-    --bg-card: #f5ebe0;          /* Warm beige for cards */
-    --bg-header: linear-gradient(135deg, #d5bdaf, #f5ebe0); /* Muted taupe to beige gradient */
-    --text-main: #4b3832;        /* Deep espresso brown for text */
-    --accent: #967259;           /* Rich leather brown accent */
-    --accent-hover: #634832;     /* Deep dark brown for hover */
-    --accent-transparent: rgba(150, 114, 89, 0.15);
-    --accent-transparent-hover: rgba(150, 114, 89, 0.25);
+    /* Sky & Meadow Palette */
+    --bg-main: #f9f5f0;
+    --bg-surface: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #fef9f4;
+    --bg-header: linear-gradient(170deg, #daeef7 0%, #fce4ec 40%, #fff8e1 70%, #e8f5e9 100%);
+
+    --text-primary: #3c3147;
+    --text-secondary: #6b5c7a;
+    --text-muted: #9a8ca8;
+
+    /* Flower-inspired accent colors */
+    --coral: #e8725c;
+    --coral-light: #f09d8e;
+    --coral-dark: #c95a46;
+    --sky-blue: #5ba4cf;
+    --sky-light: #a3d4f0;
+    --petal-pink: #f0a6b7;
+    --petal-pink-light: #fce4ec;
+    --sunflower: #f2c94c;
+    --sunflower-light: #fff3cd;
+    --leaf-green: #6ba368;
+    --leaf-light: #e8f5e9;
+    --lavender: #b39ddb;
+    --lavender-light: #ede7f6;
+
+    /* Use coral as primary accent */
+    --accent: var(--coral);
+    --accent-light: var(--coral-light);
+    --accent-dark: var(--coral-dark);
+    --accent-glow: rgba(232, 114, 92, 0.12);
+    --accent-glow-strong: rgba(232, 114, 92, 0.22);
+
+    --border: rgba(107, 92, 122, 0.1);
+    --border-hover: rgba(232, 114, 92, 0.3);
+
+    --radius: 18px;
+    --radius-sm: 12px;
+    --radius-full: 100px;
+
+    --shadow-sm: 0 2px 12px rgba(60, 49, 71, 0.06);
+    --shadow-md: 0 8px 30px rgba(60, 49, 71, 0.08);
+    --shadow-lg: 0 20px 50px rgba(60, 49, 71, 0.1);
+    --shadow-accent: 0 6px 25px rgba(232, 114, 92, 0.15);
+    --shadow-pink: 0 6px 25px rgba(240, 166, 183, 0.2);
+    --shadow-blue: 0 6px 25px rgba(91, 164, 207, 0.15);
+
+    --nav-height: 72px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.7;
     background-color: var(--bg-main);
-    color: var(--text-main);
-    position: relative;
-    z-index: 0;
+    color: var(--text-primary);
+    padding-bottom: var(--nav-height);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+/* =============================================
+   PAGE TRANSITIONS
+   ============================================= */
+.page {
+    display: none;
+    animation: fadeIn 0.45s ease-out;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* =============================================
+   HEADER – Meadow & Sky Gradient
+   ============================================= */
 header {
     text-align: center;
-    padding: 60px 20px;
+    padding: 80px 24px 60px;
     background: var(--bg-header);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative blurred flower circles */
+.header-glow {
+    position: absolute;
+    top: -60px;
+    right: -40px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(240, 166, 183, 0.25) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: -40px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(91, 164, 207, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 30%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(242, 201, 76, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.avatar-ring {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--petal-pink), var(--coral), var(--sunflower), var(--sky-blue));
+    box-shadow: 0 4px 20px rgba(232, 114, 92, 0.2);
+    animation: float 4s ease-in-out infinite;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
 }
 
 header h1 {
     font-family: 'Lora', serif;
-    font-size: 42px;
+    font-size: 40px;
     font-weight: 700;
-    color: var(--text-main);
+    color: var(--text-primary);
     letter-spacing: -0.5px;
+    margin-bottom: 12px;
 }
 
 .title {
-    font-size: 18px;
-    margin: 10px 0 25px;
-    color: var(--text-main);
-    opacity: 0.8;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    max-width: 560px;
+    margin: 0 auto 28px;
+    line-height: 1.6;
 }
 
 .header-buttons {
-    margin-top: 15px;
+    margin-top: 8px;
 }
 
+/* =============================================
+   BUTTONS
+   ============================================= */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 12px 28px;
-    margin: 8px;
-    background-color: var(--accent);
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 50px; /* Rounded buttons for a softer feel */
+    border-radius: var(--radius-full);
     font-weight: 600;
-    font-size: 15px;
-    letter-spacing: 0.5px;
-    border: 2px solid var(--accent);
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: none;
 }
 
-.btn.secondary {
-    background-color: transparent;
-    border: 2px solid var(--accent);
-    color: var(--accent);
+.btn-outline {
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid var(--coral);
+    color: var(--coral);
+    backdrop-filter: blur(8px);
 }
 
+.btn-outline:hover {
+    background: var(--coral);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-accent);
+}
+
+/* =============================================
+   SECTIONS
+   ============================================= */
 section {
-    padding: 50px 10%;
+    padding: 50px 8% 40px;
 }
 
 h2 {
     font-family: 'Lora', serif;
-    margin-bottom: 30px;
-    color: var(--text-main);
-    font-size: 32px;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--text-primary);
     text-align: center;
+    margin-bottom: 36px;
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 16px;
 }
 
 h2::after {
@@ -92,119 +263,329 @@ h2::after {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent);
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--petal-pink), var(--coral), var(--sunflower));
+    border-radius: 2px;
 }
 
+/* =============================================
+   ABOUT CARD
+   ============================================= */
+.about-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    line-height: 1.85;
+    color: var(--text-secondary);
+    font-size: 15px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sky-blue), var(--petal-pink), var(--sunflower), var(--leaf-green));
+}
+
+/* =============================================
+   SKILLS GRID
+   ============================================= */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .skill-card {
-    background-color: var(--bg-card);
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid rgba(150, 114, 89, 0.1);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 20px;
+    text-align: center;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideUp 0.5s ease-out both;
+    animation-delay: calc(var(--delay, 0) * 0.08s);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
 }
 
-.project-card {
-    background-color: var(--bg-card);
-    padding: 30px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-    border: 1px solid rgba(150, 114, 89, 0.1);
+/* Each skill card gets a unique flower-color top border */
+.skill-card:nth-child(1) {
+    border-top: 3px solid var(--coral);
 }
 
-.project-card a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: bold;
+.skill-card:nth-child(2) {
+    border-top: 3px solid var(--sky-blue);
 }
 
-.project-card a i {
-    margin-right: 5px;
+.skill-card:nth-child(3) {
+    border-top: 3px solid var(--sunflower);
 }
 
-ul {
-    list-style: square;
-    margin-left: 20px;
+.skill-card:nth-child(4) {
+    border-top: 3px solid var(--petal-pink);
 }
 
-/* --- Added Hover Effects for Interactivity --- */
-.btn:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-2px);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px var(--accent-transparent);
+.skill-card:nth-child(5) {
+    border-top: 3px solid var(--leaf-green);
 }
 
-.btn.secondary:hover {
-    background-color: var(--accent-transparent-hover);
-}
-
-.skill-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.skill-card:nth-child(6) {
+    border-top: 3px solid var(--lavender);
 }
 
 .skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px var(--accent-transparent);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
 }
 
-.section-subtitle {
+.skill-card:nth-child(1):hover {
+    box-shadow: var(--shadow-accent);
+}
+
+.skill-card:nth-child(2):hover {
+    box-shadow: var(--shadow-blue);
+}
+
+.skill-card:nth-child(3):hover {
+    box-shadow: 0 6px 25px rgba(242, 201, 76, 0.2);
+}
+
+.skill-card:nth-child(4):hover {
+    box-shadow: var(--shadow-pink);
+}
+
+.skill-card:nth-child(5):hover {
+    box-shadow: 0 6px 25px rgba(107, 163, 104, 0.2);
+}
+
+.skill-card:nth-child(6):hover {
+    box-shadow: 0 6px 25px rgba(179, 157, 219, 0.2);
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 16px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Each icon gets its own flower color */
+.skill-card:nth-child(1) .skill-icon {
+    background: rgba(232, 114, 92, 0.12);
+    color: var(--coral);
+}
+
+.skill-card:nth-child(2) .skill-icon {
+    background: rgba(91, 164, 207, 0.12);
+    color: var(--sky-blue);
+}
+
+.skill-card:nth-child(3) .skill-icon {
+    background: rgba(242, 201, 76, 0.15);
+    color: #d4a730;
+}
+
+.skill-card:nth-child(4) .skill-icon {
+    background: rgba(240, 166, 183, 0.15);
+    color: #d4728a;
+}
+
+.skill-card:nth-child(5) .skill-icon {
+    background: rgba(107, 163, 104, 0.12);
+    color: var(--leaf-green);
+}
+
+.skill-card:nth-child(6) .skill-icon {
+    background: rgba(179, 157, 219, 0.15);
+    color: var(--lavender);
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);
+}
+
+.skill-card h3 {
     font-family: 'Lora', serif;
-    margin: 50px 0 30px;
-    color: var(--text-main);
-    font-size: 26px;
-    border-bottom: 2px solid var(--accent);
-    display: inline-block;
-    padding-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
 }
 
+.skill-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* =============================================
+   PROJECT CARDS
+   ============================================= */
 .project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 16px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideUp 0.5s ease-out both;
+    animation-delay: calc(var(--delay, 0) * 0.1s);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle left accent stripe */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 4px 0 0 4px;
+}
+
+.project-card:nth-child(odd)::before {
+    background: linear-gradient(180deg, var(--coral), var(--petal-pink));
+}
+
+.project-card:nth-child(even)::before {
+    background: linear-gradient(180deg, var(--sky-blue), var(--lavender));
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px var(--accent-transparent);
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-md);
 }
 
-/* --- Added Responsive Design Tweaks --- */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 28px;
-    }
+.project-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: var(--radius-full);
+    margin-bottom: 14px;
+    color: var(--card-theme, var(--coral));
+    background: var(--card-bg, rgba(232, 114, 92, 0.1));
+}
 
-    .title {
-        font-size: 16px;
-    }
+/* Colorful tags per technology */
+.project-card:nth-child(6n+1) { --card-theme: var(--coral); --card-bg: rgba(232, 114, 92, 0.1); --card-bg-light: rgba(232, 114, 92, 0.06); }
+.project-card:nth-child(6n+2) { --card-theme: var(--sky-blue); --card-bg: rgba(91, 164, 207, 0.1); --card-bg-light: rgba(91, 164, 207, 0.06); }
+.project-card:nth-child(6n+3) { --card-theme: var(--leaf-green); --card-bg: rgba(107, 163, 104, 0.1); --card-bg-light: rgba(107, 163, 104, 0.06); }
+.project-card:nth-child(6n+4) { --card-theme: #d4a730; --card-bg: rgba(242, 201, 76, 0.12); --card-bg-light: rgba(242, 201, 76, 0.08); }
+.project-card:nth-child(6n+5) { --card-theme: var(--lavender); --card-bg: rgba(179, 157, 219, 0.12); --card-bg-light: rgba(179, 157, 219, 0.06); }
+.project-card:nth-child(6n) { --card-theme: var(--petal-pink); --card-bg: rgba(240, 166, 183, 0.12); --card-bg-light: rgba(240, 166, 183, 0.06); }
 
-    section {
-        padding: 40px 5%;
-    }
+.project-card h3 {
+    font-family: 'Lora', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
 
-    .btn {
-        display: block;
-        margin: 10px auto;
-        width: 80%;
-    }
+.project-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.project-links a {
+    color: var(--card-theme, var(--coral));
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    background: var(--card-bg-light, rgba(232, 114, 92, 0.06));
+}
+
+.project-links a:hover {
+    color: #fff;
+    background: var(--card-theme, var(--coral));
+    transform: translateY(-1px);
+}
+
+.project-links a i {
+    font-size: 15px;
+}
+
+/* =============================================
+   CERTIFICATIONS CAROUSEL
+   ============================================= */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 80%;
+    border-radius: var(--radius);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
 }
 
 .cert-card {
     text-align: center;
-    border: 1px solid rgba(150, 114, 89, 0.2);
-    background-color: var(--bg-card);
-    border-radius: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 450px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: 420px;
+    box-shadow: var(--shadow-sm);
 }
 
 .cert-card img {
@@ -212,70 +593,401 @@ ul {
     max-height: 100%;
     object-fit: contain;
     display: block;
-    border-radius: 8px;
 }
 
-/* --- Carousel Styling --- */
-.carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.carousel-wrapper {
-    overflow: hidden;
-    width: 80%;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.4s ease-in-out;
-}
-
-.carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
+.cert-label {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
 }
 
 .carousel-btn {
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(150, 114, 89, 0.2);
-    color: var(--accent);
-    width: 50px;
-    height: 50px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--coral);
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    z-index: 10;
+    font-size: 16px;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
 }
 
 .carousel-btn:hover {
-    color: var(--accent-hover);
+    background: var(--coral);
+    color: #fff;
+    border-color: var(--coral);
+    box-shadow: var(--shadow-accent);
+    transform: scale(1.08);
 }
 
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--petal-pink-light);
+    border: 2px solid var(--petal-pink);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: var(--coral);
+    border-color: var(--coral);
+    width: 26px;
+    border-radius: 5px;
+}
+
+/* =============================================
+   CONTACT
+   ============================================= */
+.contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 28px;
+    text-align: left;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideUp 0.5s ease-out both;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Each contact card gets a distinct flower color */
+.contact-card:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--coral), var(--petal-pink));
+}
+
+.contact-card:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--text-primary), var(--text-muted));
+}
+
+.contact-card:nth-child(3)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--sky-blue), #0a66c2);
+}
+
+.contact-card:nth-child(4)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #512da8, #7e57c2);
+}
+
+.contact-card:nth-child(5)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1565c0, #1976d2);
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.contact-card:nth-child(1) .contact-icon {
+    background: rgba(232, 114, 92, 0.1);
+    color: var(--coral);
+}
+
+.contact-card:nth-child(2) .contact-icon {
+    background: rgba(60, 49, 71, 0.08);
+    color: var(--text-primary);
+}
+
+.contact-card:nth-child(3) .contact-icon {
+    background: rgba(91, 164, 207, 0.1);
+    color: var(--sky-blue);
+}
+
+.contact-card:nth-child(4) .contact-icon {
+    background: rgba(81, 45, 168, 0.1);
+    color: #512da8;
+}
+
+.contact-card:nth-child(5) .contact-icon {
+    background: rgba(21, 101, 192, 0.1);
+    color: #1976d2;
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.12) rotate(-3deg);
+}
+
+.contact-card h3 {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.contact-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    word-break: break-all;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
 footer {
     text-align: center;
     padding: 40px 20px;
-    background-color: var(--bg-card);
-    margin-top: 60px;
-    color: var(--text-main);
-    border-top: 1px solid rgba(150, 114, 89, 0.1);
+    margin-top: 40px;
+    color: var(--text-muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+    background: linear-gradient(180deg, transparent, rgba(218, 238, 247, 0.2));
 }
 
-/* Fix for contact section links */
-#contact p i, #contact p a {
-    color: var(--accent);
-    text-decoration: none;
+/* =============================================
+   BOTTOM NAVIGATION BAR – Frosted Glass
+   ============================================= */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-top: 1px solid rgba(232, 114, 92, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 8px;
+    z-index: 1000;
+    box-shadow: 0 -2px 20px rgba(60, 49, 71, 0.06);
 }
-#contact p a:hover {
-    color: var(--accent-hover);
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 8px 4px;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex: 1;
+    max-width: 80px;
+    position: relative;
+}
+
+.nav-item i {
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.nav-item span {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.nav-item.active {
+    color: var(--coral);
+}
+
+.nav-item.active i {
+    transform: scale(1.15);
+}
+
+.nav-item.active::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--coral), var(--petal-pink));
+    border-radius: 0 0 4px 4px;
+}
+
+.nav-item:hover:not(.active) {
+    color: var(--text-secondary);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 768px) {
+    header {
+        padding: 60px 20px 40px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .title {
+        font-size: 13px;
+    }
+
+    section {
+        padding: 36px 5% 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .skill-card {
+        padding: 20px 14px;
+    }
+
+    .project-card {
+        padding: 22px 18px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-card {
+        height: 300px;
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .nav-item {
+        max-width: 64px;
+    }
+
+    .nav-item span {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .avatar-ring {
+        width: 80px;
+        height: 80px;
+    }
+
+    .avatar-placeholder {
+        font-size: 28px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .carousel-wrapper {
+        width: 70%;
+    }
+}
+
+/* =============================================
+   SCROLLBAR
+   ============================================= */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--petal-pink);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--coral);
+}
+
+/* Selection */
+::selection {
+    background: rgba(240, 166, 183, 0.3);
+    color: var(--text-primary);
 }
