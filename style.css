@@ -789,10 +789,37 @@ h2::after {
 }
 
 .contact-card p {
-    font-size: 13px;
-    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
     word-break: break-all;
 }
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.action-icon {
+    margin-left: auto;
+    font-size: 16px;
+    color: var(--text-muted);
+    opacity: 0.5;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-card:hover .action-icon {
+    opacity: 1;
+    transform: translate(3px, -3px);
+}
+
+.contact-card:nth-child(1):hover .action-icon { color: var(--coral); }
+.contact-card:nth-child(2):hover .action-icon { color: var(--text-primary); }
+.contact-card:nth-child(3):hover .action-icon { color: var(--sky-blue); }
+.contact-card:nth-child(4):hover .action-icon { color: #512da8; }
+.contact-card:nth-child(5):hover .action-icon { color: #1976d2; }
 
 /* =============================================
    FOOTER
