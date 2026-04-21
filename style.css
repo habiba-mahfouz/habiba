@@ -389,38 +389,29 @@ h2::after {
 }
 
 /* Each icon gets its own flower color */
-.skill-card:nth-child(1) .skill-icon {
-    background: rgba(232, 114, 92, 0.12);
-    color: var(--coral);
+.skill-card:nth-child(6n+1) { --skill-color: var(--coral); --skill-bg: rgba(232, 114, 92, 0.12); }
+.skill-card:nth-child(6n+2) { --skill-color: var(--sky-blue); --skill-bg: rgba(91, 164, 207, 0.12); }
+.skill-card:nth-child(6n+3) { --skill-color: #d4a730; --skill-bg: rgba(242, 201, 76, 0.15); }
+.skill-card:nth-child(6n+4) { --skill-color: #d4728a; --skill-bg: rgba(240, 166, 183, 0.15); }
+.skill-card:nth-child(6n+5) { --skill-color: var(--leaf-green); --skill-bg: rgba(107, 163, 104, 0.12); }
+.skill-card:nth-child(6n) { --skill-color: var(--lavender); --skill-bg: rgba(179, 157, 219, 0.15); }
+
+.skill-card .skill-icon {
+    background: var(--skill-bg);
+    color: var(--skill-color);
 }
 
-.skill-card:nth-child(2) .skill-icon {
-    background: rgba(91, 164, 207, 0.12);
-    color: var(--sky-blue);
-}
-
-.skill-card:nth-child(3) .skill-icon {
-    background: rgba(242, 201, 76, 0.15);
-    color: #d4a730;
-}
-
-.skill-card:nth-child(4) .skill-icon {
-    background: rgba(240, 166, 183, 0.15);
-    color: #d4728a;
-}
-
-.skill-card:nth-child(5) .skill-icon {
-    background: rgba(107, 163, 104, 0.12);
-    color: var(--leaf-green);
-}
-
-.skill-card:nth-child(6) .skill-icon {
-    background: rgba(179, 157, 219, 0.15);
-    color: var(--lavender);
+/* Subtle top accent line to match icons */
+.skill-card {
+    position: relative;
+    border-top: 3px solid var(--skill-color);
 }
 
 .skill-card:hover .skill-icon {
     transform: scale(1.1);
+    background: var(--skill-color);
+    color: #fff;
+    box-shadow: 0 4px 12px var(--skill-bg);
 }
 
 .skill-card h3 {
@@ -435,6 +426,15 @@ h2::after {
     font-size: 13px;
     color: var(--text-muted);
     line-height: 1.5;
+}
+
+}
+
+/* --- Category Themes for Skills (Overriding individual colors if desired) --- */
+/* (Keeping individual colors for better visual variety as per user request) */
+.skills-container.soft-skills .skill-icon,
+.skills-container.lang-skills .skill-icon {
+   /* No overrides needed now, as they follow individual card themes */
 }
 
 /* =============================================
