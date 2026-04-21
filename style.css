@@ -428,8 +428,6 @@ h2::after {
     line-height: 1.5;
 }
 
-}
-
 /* --- Category Themes for Skills (Overriding individual colors if desired) --- */
 /* (Keeping individual colors for better visual variety as per user request) */
 .skills-container.soft-skills .skill-icon,
