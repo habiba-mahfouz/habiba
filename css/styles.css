@@ -131,6 +131,7 @@ body {
 .hero-highlights {
     list-style: none;
     margin-bottom: 1.8rem;
+    margin-left: 80px;
 }
 
 .hero-highlights li {
@@ -170,6 +171,7 @@ body {
     gap: 0.6rem;
     box-shadow: 0 4px 10px rgba(61, 16, 28, 0.25);
     text-decoration: none;
+    margin-left: 80px;
 }
 
 .btn-primary:hover {
