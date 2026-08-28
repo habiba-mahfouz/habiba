@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habiba Mahfouz - Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero-section" id="hero">
+        <div class="hero-container">
+            <!-- Left Side: Burgundy Box with Profile Photo Overlay -->
+            <div class="hero-left">
+                <div class="profile-frame">
+                    <div class="profile-img-crop">
+                        <img src="images/profile photo.png" alt="Habiba Mahfouz Profile" class="profile-img">
+                    </div>
+                </div>
+            </div>
+            <!-- Right Side: Beige Box with Text & Action -->
+            <div class="hero-right">
+                <div class="hero-content">
+                    <h1 class="hero-name">Habiba Mahfouz</h1>
+                    <ul class="hero-highlights">
+                        <li><span class="bullet">•</span> CS Student @ Alexandria University</li>
+                        <li><span class="bullet">•</span> React Frontend Web Developer at DEPI</li>
+                        <li><span class="bullet">•</span> CCNA Certified & Network Enthusiast</li>
+                        <li><span class="bullet">•</span> Junior Full Stack</li>
+                        <li><span class="bullet">•</span> Junior UI/UX</li>
+                        <li><span class="bullet">•</span> Java, Python, & C++ Developer</li>
+                    </ul>
+                    <div class="hero-action">
+                        <a href="https://drive.google.com/file/d/1pJtv7yBGDdaMXNsGLOkZJY8MNlGWwcSY/view" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                           Show CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT ME SECTION -->
+    <section class="section section-dark" id="about">
+        <div class="container">
+            <h2 class="section-title text-light">About ME</h2>
+            <div class="about-text">
+                <p>I'm a 3rd-year Software Industry & Multimedia student at Alexandria University, working at the intersection of network engineering, software development, and user experience design.</p>
+                
+                <p><strong>My technical toolkit spans:</strong></p>
+                <ul>
+                    <li>Full-stack web development (HTML, CSS, JavaScript, React, PHP, .NET)</li>
+                    <li>Database Management (MySQL)</li>
+                    <li>Enterprise network architecture (VLAN, OSPF, VPN)</li>
+                    <li>Programming in Java, C++, and Python</li>
+                </ul>
+
+                <p>On the creative side, I'm a UI/UX designer and multimedia creator, with comprehensive experience in user research and producing impactful visual identity and audio campaigns.</p>
+
+                <p>I'm currently advancing my expertise in Server Administration and Ethical Hacking, with a focus on building secure, easy-to-use digital solutions.</p>
+
+                <p>Actively seeking internship opportunities to apply this multidisciplinary background to real-world software solutions. Let's connect and build the future together!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS SECTION -->
+    <section class="section section-light" id="technical-skills">
+        <div class="container">
+            <h2 class="section-title-skill text-dark">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3 class="skill-title">Programming</h3>
+                    <p class="skill-desc">Java, C++, Python, OOP, Data Structures, Algorithms, Problem Solving</p>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-title">Web Development</h3>
+                    <p class="skill-desc">HTML, CSS, JS, React, MySQL</p>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-title">UI / UX Design</h3>
+                    <p class="skill-desc">UI, Wireframing, & Prototyping</p>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-title">CCNA</h3>
+                    <p class="skill-desc">Routing & Switching, Network Fundamentals, IP Addressing, Wi-Fi</p>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-title">Systems & Security</h3>
+                    <p class="skill-desc">Linux, Command Line, OS Fundamentals, Security Basics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLO PROJECTS SECTION -->
+    <section class="section section-dark" id="solo-projects">
+        <div class="container">
+            <h2 class="section-title text-light">Solo Projects</h2>
+            <div class="projects-grid">
+                <!-- Solo 1 -->
+                <div class="project-card">
+                    <div class="project-img-placeholder">
+                        <img src="images/Network.png" alt="Network Fundamentals Project">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Network Fundamentals</h3>
+                        <p class="project-desc">Multi-branch enterprise network designed with Cisco Packet Tracer covering IP classes, subnetting, RIP routing, and NAT.</p>
+                        <button class="btn-card open-modal-btn" data-project-id="solo-network-fundamentals">More Details</button>
+                    </div>
+                </div>
+
+                <!-- Solo 2 -->
+                <div class="project-card">
+                    <div class="project-img-placeholder">
+                        <img src="images/ccna.png" alt="Enterprise Network Security">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Enterprise Network Security</h3>
+                        <p class="project-desc">Secure network infrastructure implementing VLANs, OSPF routing, SSH, Port Security, DHCP Snooping, and IPsec VPN.</p>
+                        <button class="btn-card open-modal-btn" data-project-id="solo-enterprise-security">More Details</button>
+                    </div>
+                </div>
+
+                <!-- Solo 3 -->
+                <div class="project-card">
+                    <div class="project-img-placeholder">
+                        <img src="images/libc++.png" alt="Library Management System">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Library Management System</h3>
+                        <p class="project-desc">Console-based C++ application managing book inventories, borrowings, and library statistics using OOP principles.</p>
+                        <button class="btn-card open-modal-btn" data-project-id="solo-library-cpp">More Details</button>
+                    </div>
+                </div>
+
+                <!-- Solo 4 -->
+                <div class="project-card">
+                    <div class="project-img-placeholder">
+                        <img src="images/snake1.png" alt="Snake Game Python">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Snake Game</h3>
+                        <p class="project-desc">Interactive arcade game featuring real-time input handling, collision detection, and dynamic score tracking.</p>
+                        <button class="btn-card open-modal-btn" data-project-id="solo-snake-game">More Details</button>
+                    </div>
+                </div>
+
+                <!-- Solo 5 -->
+                <div class="project-card">
+                    <div class="project-img-placeholder">
+                        <img src="images/calajava.png" alt="Expression Calculator">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Expression Calculator</h3>
+                        <p class="project-desc">Mathematical expression parser converting infix to postfix syntax using Stack data structures in Java.</p>
+                        <button class="btn-card open-modal-btn" data-project-id="solo-expression-calculator">More Details</button>
+                    </div>
+                </div>
+
+                <!-- Solo 6 -->
+                <div class="project-card">
+                    <div class="project-img-placeholder">
+                        <img src="images/booki.png" alt="Booki UX Case Study">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Booki</h3>
+                        <p class="project-desc">End-to-end user research, persona creation, wireframing, and interactive UI prototyping for an online bookstore.</p>
+                        <button class="btn-card open-modal-btn" data-project-id="solo-booki-ux">More Details</button>
+                    </div>
+                </div>
+
+                <!-- Solo 7 : to do list
+                <div class="project-card">
+                    <div class="project-img-placeholder">
+                        <img src="images/booki.png" alt="Booki UX Case Study">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Booki - UX Case Study</h3>
+                        <p class="project-desc">End-to-end user research, persona creation, wireframing, and interactive UI prototyping for an online bookstore.</p>
+                        <button class="btn-card open-modal-btn" data-project-id="solo-booki-ux">More Details</button>
+                    </div>
+                </div>-->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM PROJECTS SECTION -->
+    <section class="section section-light" id="team-projects">
+        <div class="container">
+            <h2 class="section-title text-dark">Team Projects</h2>
+            <div class="projects-grid">
+                <!-- Team 1 -->
+                <div class="project-card card-dark">
+                    <div class="project-img-placeholder dark-ph">
+                        <img src="images/college.png" alt="College Management System">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">College Management System</h3>
+                        <p class="project-desc">Collaborative Java application managing academic administration, course registrations, and student grading.</p>
+                        <button class="btn-card btn-light open-modal-btn" data-project-id="team-college-system">More Details</button>
+                    </div>
+                </div>
+
+                <!-- Team 2 -->
+                <div class="project-card card-dark">
+                    <div class="project-img-placeholder dark-ph">
+                        <img src="images/flight.png" alt="Flight Booking System">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Flight Booking System</h3>
+                        <p class="project-desc">Desktop system for managing flight reservations, passenger bookings, schedules, and ticket generation.</p>
+                        <button class="btn-card btn-light open-modal-btn" data-project-id="team-flight-booking">More Details</button>
+                    </div>
+                </div>
+
+                <!-- Team 3 -->
+                <div class="project-card card-dark">
+                    <div class="project-img-placeholder dark-ph">
+                        <img src="images/logo.png" alt="Palestine Multimedia Platform">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Palestine Multimedia</h3>
+                        <p class="project-desc">Interactive web platform showcasing cultural heritage, historical media, and responsive design systems.</p>
+                        <button class="btn-card btn-light open-modal-btn" data-project-id="team-palestine-multimedia">More Details</button>
+                    </div>
+                </div>
+
+                <!-- Team 4 -->
+                <div class="project-card card-dark">
+                    <div class="project-img-placeholder dark-ph">
+                        <img src="images/movie.png" alt="CineStream Movie Platform">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">CineStream</h3>
+                        <p class="project-desc">Modern movie discovery platform with rating systems, genre filters, and responsive UI components.</p>
+                        <button class="btn-card btn-light open-modal-btn" data-project-id="team-cinestream">More Details</button>
+                    </div>
+                </div>
+
+                <!-- Team 5 -->
+                <div class="project-card card-dark">
+                    <div class="project-img-placeholder dark-ph">
+                        <img src="images/bookbloom.png" alt="Book Bloom WebApp">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Book Bloom</h3>
+                        <p class="project-desc">E-commerce bookstore app with user authentication, category browsing, cart checkout, and dashboard.</p>
+                        <button class="btn-card btn-light open-modal-btn" data-project-id="team-book-bloom">More Details</button>
+                    </div>
+                </div>
+
+                <!-- Team 6 -->
+                <div class="project-card card-dark">
+                    <div class="project-img-placeholder dark-ph">
+                        <img src="images/unity.png" alt="3D Unity Game">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">3D Unity Game</h3>
+                        <p class="project-desc">Immersive 3D game created in Unity featuring custom physics, gameplay logic, and team collaboration.</p>
+                        <button class="btn-card btn-light open-modal-btn" data-project-id="team-unity-game">More Details</button>
+                    </div>
+                </div>
+
+                <!-- Team 7 -->
+                <div class="project-card card-dark">
+                    <div class="project-img-placeholder dark-ph">
+                        <img src="images/marketix1.png" alt="Marketix HCI UX App">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Marketix</h3>
+                        <p class="project-desc">Innovative e-commerce app featuring flexible delivery pricing, extensive UX research, and Figma prototypes.</p>
+                        <button class="btn-card btn-light open-modal-btn" data-project-id="team-marketix-hci">More Details</button>
+                    </div>
+                </div>
+
+                <!-- Team 8 : database 
+                <div class="project-card card-dark">
+                    <div class="project-img-placeholder dark-ph">
+                        <img src="images/marketix.png" alt="Marketix HCI UX App">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Marketix - HCI & UX App</h3>
+                        <p class="project-desc">Innovative e-commerce app featuring flexible delivery pricing, extensive UX research, and Figma prototypes.</p>
+                        <button class="btn-card btn-light open-modal-btn" data-project-id="team-marketix-hci">More Details</button>
+                    </div>
+                </div>-->
+
+                <!-- Team 9 : data science python
+                <div class="project-card card-dark">
+                    <div class="project-img-placeholder dark-ph">
+                        <img src="images/marketix.png" alt="Marketix HCI UX App">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Marketix - HCI & UX App</h3>
+                        <p class="project-desc">Innovative e-commerce app featuring flexible delivery pricing, extensive UX research, and Figma prototypes.</p>
+                        <button class="btn-card btn-light open-modal-btn" data-project-id="team-marketix-hci">More Details</button>
+                    </div>
+                </div>-->
+
+                <!-- Team 10 : data science power bi
+                <div class="project-card card-dark">
+                    <div class="project-img-placeholder dark-ph">
+                        <img src="images/marketix.png" alt="Marketix HCI UX App">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Marketix - HCI & UX App</h3>
+                        <p class="project-desc">Innovative e-commerce app featuring flexible delivery pricing, extensive UX research, and Figma prototypes.</p>
+                        <button class="btn-card btn-light open-modal-btn" data-project-id="team-marketix-hci">More Details</button>
+                    </div>
+                </div>-->
+
+                <!-- Team 11 : software 
+                <div class="project-card card-dark">
+                    <div class="project-img-placeholder dark-ph">
+                        <img src="images/marketix.png" alt="Marketix HCI UX App">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Marketix - HCI & UX App</h3>
+                        <p class="project-desc">Innovative e-commerce app featuring flexible delivery pricing, extensive UX research, and Figma prototypes.</p>
+                        <button class="btn-card btn-light open-modal-btn" data-project-id="team-marketix-hci">More Details</button>
+                    </div>
+                </div>-->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SOFT SKILLS SECTION -->
+    <section class="section section-light" id="soft-skills">
+        <div class="container">
+            <h2 class="section-title-skill text-dark">Soft Skills</h2>
+            <div class="skills-grid soft-grid">
+                <div class="skill-card">
+                    <h3 class="skill-title">Problem Solving</h3>
+                    <p class="skill-desc">Analytical thinking & structured debugging</p>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-title">Teamwork</h3>
+                    <p class="skill-desc">Collaborative mindset & active team communication</p>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-title">Self-Learning</h3>
+                    <p class="skill-desc">Continuous research for modern technology stack</p>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-title">Time Management</h3>
+                    <p class="skill-desc">Prioritizing tasks & efficient deadline handling</p>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-title">Adaptability</h3>
+                    <p class="skill-desc">Rapid adjustment to new tools & project environments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section class="section section-dark" id="certifications">
+        <div class="container">
+            <h2 class="section-title-skill text-light">Certifications</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" id="prevCert"><i class="fa-solid fa-chevron-left"></i></button>
+                
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="certTrack">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide active">
+                            <div class="cert-card">
+                                <img src="certifications/CCNA.jpeg" alt="CCNA Certificate" class="cert-img">
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide active">
+                            <div class="cert-card">
+                                <img src="certifications/Intro_to_AI.png" alt="Intro to AI Certificate" class="cert-img">
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide active">
+                            <div class="cert-card">
+                                <img src="certifications/AI.png" alt="AI Certificate" class="cert-img">
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="carousel-slide active">
+                            <div class="cert-card">
+                                <img src="certifications/Python.jpeg" alt="Python Certificate" class="cert-img">
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="carousel-slide active">
+                            <div class="cert-card">
+                                <img src="certifications/python & AI.jpeg" alt="python & AI Certificate" class="cert-img">
+                            </div>
+                        </div>
+                        <!-- Slide 6 -->
+                        <div class="carousel-slide active">
+                            <div class="cert-card">
+                                <img src="certifications/C++.png" alt="C++ Certificate" class="cert-img">
+                            </div>
+                        </div>
+                        <!-- Slide 7 -->
+                        <div class="carousel-slide active">
+                            <div class="cert-card">
+                                <img src="certifications/UI UX.png" alt="UI/UX Certificate" class="cert-img">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <button class="carousel-btn next-btn" id="nextCert"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            
+            <div class="carousel-dots" id="carouselDots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LANGUAGES SECTION -->
+    <section class="section section-light" id="languages">
+        <div class="container">
+            <h2 class="section-title-skill text-dark">Languages</h2>
+            <div class="languages-grid">
+                <div class="lang-card">
+                    <h3 class="lang-name">Arabic</h3>
+                    <span class="lang-level">NATIVE PROFICIENCY</span>
+                </div>
+                <div class="lang-card">
+                    <h3 class="lang-name">English</h3>
+                    <span class="lang-level">FULL PROFESSIONAL PROFICIENCY</span>
+                </div>
+                <div class="lang-card">
+                    <h3 class="lang-name">French</h3>
+                    <span class="lang-level">BASIC / ELEMENTARY PROFICIENCY</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT ME SECTION (FOOTER) -->
+    <footer class="footer section-dark" id="contact">
+        <div class="container">
+            <h2 class="section-title text-light">Contact Me</h2>
+            <div class="contact-list">
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:habibamahfouzalmanfouzh@gmail.com" class="contact-value">habibamohammedmahfouz@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/habiba-mahfouz-4ba87334a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="contact-value">LinkedIn-Habiba-Mahfouz</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">GitHub</span>
+                    <a href="https://github.com/habiba-mahfouz" target="_blank" class="contact-value">GitHub-Habiba-Mahfouz</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">WhatsApp</span>
+                    <a href="https://wa.me/201508853049" target="_blank" class="contact-value">+20 150 885 3049</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Codeforces</span>
+                    <a href="https://codeforces.com" target="_blank" class="contact-value">codeforces-Habiba-Mahfouz</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Habiba Mahfouz. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DYNAMIC PROJECT DETAILS POPUP MODAL (Exact 1050px Max Width) -->
+    <div class="project-details-overlay" id="projectDetailsOverlay">
+        <div class="project-details-modal">
+            <!-- Header Bar with Title & Close X Button -->
+            <div class="project-details-header">
+                <h2 id="modalHeaderTitle">Project Details</h2>
+                <button class="project-details-close-btn" id="closeProjectDetailsBtn" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="project-details-body">
+                <!-- Project Media Carousel (Images and/or Video) -->
+                <div class="project-media-carousel-container" id="modalMediaCarousel">
+                    <button class="project-carousel-btn prev-btn" id="modalMediaPrev" title="Previous Media"><i class="fa-solid fa-chevron-left"></i></button>
+
+                    <div class="project-carousel-viewport">
+                        <div class="project-carousel-track" id="modalMediaTrack">
+                            <!-- Dynamic Slides (Images & Videos) -->
+                        </div>
+                    </div>
+
+                    <button class="project-carousel-btn next-btn" id="modalMediaNext" title="Next Media"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+
+                <!-- Carousel Dots -->
+                <div class="project-carousel-dots" id="modalMediaDots">
+                    <!-- Dynamic Dots matching media items -->
+                </div>
+
+                <!-- Tech Stack Badges directly under media (no heading) -->
+                <div class="tech-badges-container" id="modalProjectTechStack" style="margin-bottom: 2.2rem; margin-top: 0.5rem;">
+                    <!-- Tech badges generated dynamically -->
+                </div>
+
+                <!-- Overview Section -->
+                <div class="details-section">
+                    <h3><i class="fa-solid fa-lightbulb"></i> Project Overview</h3>
+                    <p id="modalProjectOverview" class="project-overview-text">Project overview description goes here...</p>
+                </div>
+
+                <!-- Key Features Section -->
+                <div class="details-section">
+                    <h3><i class="fa-solid fa-list-check"></i> Key Features & Implementation</h3>
+                    <ul class="features-list" id="modalProjectFeatures">
+                        <!-- Features generated dynamically -->
+                    </ul>
+                </div>
+
+                <!-- Action Links (GitHub & LinkedIn Buttons) -->
+                <div class="details-action-bar">
+                    <a href="#" id="modalProjectGithubBtn" target="_blank" rel="noopener noreferrer" class="btn-action btn-github">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <a href="#" id="modalProjectLinkedinBtn" target="_blank" rel="noopener noreferrer" class="btn-action btn-linkedin">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="js/project-details.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

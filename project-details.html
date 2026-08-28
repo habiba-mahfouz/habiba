@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/project-details.css">
+</head>
+<body class="details-page-body">
+
+    <!-- Top Full-Width Header Bar -->
+    <header class="details-header-bar">
+        <div class="details-header-inner">
+            <h2 id="headerProjectTitle" class="details-header-title">Project Details</h2>
+            <!-- Close Button (X Icon) -->
+            <button class="details-close-btn" id="closeDetailsBtn" title="Close & Go Back">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container details-main-container">
+        <div class="details-content">
+
+            <!-- Project Title -->
+            <h1 class="details-title" id="projectTitle">Project Title</h1>
+
+            <!-- Project Media Carousel (Images and/or Video) -->
+            <div class="project-media-carousel-container" id="projectMediaCarousel">
+                <button class="project-carousel-btn prev-btn" id="projectMediaPrev" title="Previous Media"><i class="fa-solid fa-chevron-left"></i></button>
+
+                <div class="project-carousel-viewport">
+                    <div class="project-carousel-track" id="projectMediaTrack">
+                        <!-- Dynamic Slides (Images & Videos) -->
+                    </div>
+                </div>
+
+                <button class="project-carousel-btn next-btn" id="projectMediaNext" title="Next Media"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Carousel Dots -->
+            <div class="project-carousel-dots" id="projectMediaDots">
+                <!-- Dynamic Dots -->
+            </div>
+
+            <!-- Tech Stack Badges directly under media (no heading) -->
+            <div class="tech-badges-container" id="projectTechStack" style="margin-bottom: 2.2rem; margin-top: 0.5rem;">
+                <!-- Tech badges generated dynamically -->
+            </div>
+
+            <!-- Overview Section -->
+            <div class="details-section">
+                <h3><i class="fa-solid fa-lightbulb"></i> Project Overview</h3>
+                <p id="projectOverview" class="project-overview-text">Project overview description goes here...</p>
+            </div>
+
+            <!-- Key Features Section -->
+            <div class="details-section">
+                <h3><i class="fa-solid fa-list-check"></i> Key Features & Implementation</h3>
+                <ul class="features-list" id="projectFeatures">
+                    <!-- Features generated dynamically -->
+                </ul>
+            </div>
+
+            <!-- Action Links (GitHub & LinkedIn Buttons) -->
+            <div class="details-action-bar">
+                <a href="#" id="projectGithubBtn" target="_blank" rel="noopener noreferrer" class="btn-action btn-github">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="#" id="projectLinkedinBtn" target="_blank" rel="noopener noreferrer" class="btn-action btn-linkedin">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Project Data Script -->
+    <script src="js/project-details.js"></script>
+</body>
+</html>
