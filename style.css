@@ -66,68 +66,15 @@ nav a:hover {
 /*=========================================================================
     hero 
 ===========================================================================*/
+
 .hero {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    max-width: 1200px;
     width: 100%;
-    padding: 40px 120px;
+    height: 100vh;           
+    background-image: url(images/cover1.png);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
 }
-
-.hero-photo {
-    flex: 0 0 auto;
-    position: relative;
-    width: 270px;
-    height: 390px;
-    overflow: hidden;
-    border-radius: 0 0 0 150px;
-    border-right: 1px solid #56121F;
-}
-
-.hero-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-}
-
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    max-width: 1000px;
-    margin-bottom: 40px;
-}
-
-.hero-greeting {
-    font-size: 80px;
-    font-weight: 10;
-    color: #56121F;
-}
-
-.hero-name {
-    font-size: 86px;
-    color: #56121F;
-    margin-top: -70px;
-    letter-spacing: 2px;
-}
-
-.hero-role {
-    font-size: 60px;
-    color: #D8A3AA;
-    margin-top: -70px;
-    line-height: -1;
-    padding-left: 100px;
-}
-
-.hero-tagline {
-    font-size: 30px;
-    color: #676667;
-    margin-top: -30px;
-    font-weight: 500;
-}
-
 
 /*=========================================================================
     About
@@ -481,21 +428,21 @@ mark {
 /*=========================================================================
     Education
 ===========================================================================*/
-.education{
-  width:100%;
-  padding:46px 64px 34px;
-  display:flex;
-  justify-content:space-between;
-  gap:24px;
+.education {
+    width: 100%;
+    padding: 46px 64px 34px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
 }
- 
-.education .left{
-  display:flex;
-  flex-direction:column;
+
+.education .left {
+    display: flex;
+    flex-direction: column;
 }
- 
-.education .title{
-  font-weight: 500;
+
+.education .title {
+    font-weight: 500;
     font-size: 70px;
     color: #56121F;
     line-height: 1;
@@ -503,38 +450,38 @@ mark {
     margin-right: 700px;
     text-align: left;
 }
- 
-.education .subtitle{
-  font-size:36px;
-  font-weight:500;
-  color:#56121F;
-  line-height:1;
+
+.education .subtitle {
+    font-size: 36px;
+    font-weight: 500;
+    color: #56121F;
+    line-height: 1;
 }
- 
-.education .right{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:16px;
-  flex-shrink:0;
+
+.education .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
 }
- 
-.education .logos{
-  height:70px;
-  width:auto;
-  display:block;
-  margin-right: 40px;
+
+.education .logos {
+    height: 70px;
+    width: auto;
+    display: block;
+    margin-right: 40px;
 }
- 
-.education .years{
-  margin:0;
-  font-size:24px;
-  font-weight:700;
-  color:#56121F;
-  white-space:nowrap;
-  font-family: 'inter', serif;
+
+.education .years {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #56121F;
+    white-space: nowrap;
+    font-family: 'inter', serif;
 }
- 
+
 
 /*=========================================================================
     Skills
@@ -831,10 +778,6 @@ h1.title {
    RESPONSIVE DESIGN
    ======================================================================= */
 
-/* -------------------------------------------------------------------------
-   Large tablets / smaller laptops
-   ------------------------------------------------------------------------- */
-
 @media (max-width: 1200px) {
 
     /* ================= HEADER ================= */
@@ -855,41 +798,6 @@ h1.title {
     nav a.active {
         font-size: 40px;
     }
-
-
-    /* ================= HERO ================= */
-
-    .hero {
-        max-width: 1100px;
-        padding: 50px 70px;
-        gap: 40px;
-    }
-
-    .hero-photo {
-        width: 240px;
-        height: 350px;
-    }
-
-    .hero-greeting {
-        font-size: 68px;
-    }
-
-    .hero-name {
-        font-size: 74px;
-        margin-top: -55px;
-    }
-
-    .hero-role {
-        font-size: 52px;
-        margin-top: -55px;
-        padding-left: 70px;
-    }
-
-    .hero-tagline {
-        font-size: 27px;
-        margin-top: -25px;
-    }
-
 
     /* ================= ABOUT ================= */
 
@@ -1043,34 +951,7 @@ h1.title {
     /* ================= HERO ================= */
 
     .hero {
-        width: 100%;
-        padding: 45px 50px;
-        gap: 30px;
-    }
-
-    .hero-photo {
-        width: 210px;
-        height: 315px;
-    }
-
-    .hero-greeting {
-        font-size: 58px;
-    }
-
-    .hero-name {
-        font-size: 62px;
-        margin-top: -45px;
-    }
-
-    .hero-role {
-        font-size: 44px;
-        margin-top: -45px;
-        padding-left: 45px;
-    }
-
-    .hero-tagline {
-        font-size: 24px;
-        margin-top: -20px;
+        background-image: url(images/cover2.png);
     }
 
 
@@ -1114,7 +995,7 @@ h1.title {
 
     .project-card {
         height: 240px;
-         width: 75vw; 
+        width: 75vw;
     }
 
     .project-overlay {
@@ -1261,7 +1142,7 @@ h1.title {
         font-size: 18px;
     }
 
-    .contact-value.phone{
+    .contact-value.phone {
         font-size: 12px;
     }
 
@@ -1307,7 +1188,7 @@ h1.title {
     nav {
         gap: 42px;
         width: 100%;
-        
+
     }
 
     nav a {
@@ -1315,59 +1196,14 @@ h1.title {
     }
 
     nav a.active {
-         display: none;
+        display: none;
     }
 
 
     /* ================= HERO ================= */
 
     .hero {
-        width: 100%;
-        padding: 40px 25px;
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        text-align: center;
-    }
-
-    .hero-photo {
-        width: 190px;
-        height: 270px;
-        border-radius: 200px ;
-    }
-
-    .hero-divider {
-        display: none;
-    }
-
-    .hero-text {
-        width: 100%;
-        max-width: none;
-        margin-bottom: 0;
-        align-items: center;
-    }
-
-    .hero-greeting {
-        font-size: 55px;
-    }
-
-    .hero-name {
-        font-size: 58px;
-        margin-top: -35px;
-        letter-spacing: 1px;
-    }
-
-    .hero-role {
-        font-size: 42px;
-        margin-top: -35px;
-        padding-left: 0;
-    }
-
-    .hero-tagline {
-        max-width: 340px;
-        font-size: 23px;
-        margin-top: -12px;
-        line-height: 1.1;
+        background-image: url(images/cover3.png);
     }
 
 
@@ -1737,30 +1573,7 @@ h1.title {
     }
 
     .hero {
-        padding: 30px 18px;
-    }
-
-    .hero-photo {
-        width: 165px;
-        height: 240px;
-    }
-
-    .hero-greeting {
-        font-size: 48px;
-    }
-
-    .hero-name {
-        font-size: 51px;
-        margin-top: -30px;
-    }
-
-    .hero-role {
-        font-size: 37px;
-        margin-top: -30px;
-    }
-
-    .hero-tagline {
-        font-size: 20px;
+        background-image: url(images/cover4.png);
     }
 
     .about {
@@ -1864,17 +1677,18 @@ h1.title {
     }
 }
 
+@media (max-width: 200px) {
+    .hero {
+        background-image: url(images/cover4.png);
+    }
+
+}
 
 /* =========================================================================
    TOUCH DEVICES
    ======================================================================= */
 
 @media (hover: none) and (pointer: coarse) {
-
-    /*
-       Hover overlays don't work naturally on phones.
-       Make the project overlay slightly easier to activate/read.
-    */
 
     .project-card:active .project-overlay {
         opacity: 1;
